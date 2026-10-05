@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Era do Gelo - Desafio Glacial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <h1>ERA DO GELO <span>ICE MATRIX</span></h1>
+      <p class="subtitle">❄️ Memorize os cristais congelados e sobreviva! ❄️</p>
+    </header>
+
+    <div class="stats-bar">
+      <div class="stat-card">
+        <span class="stat-label">Era</span>
+        <span id="level-val" class="stat-value">1</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Pontos</span>
+        <span id="score-val" class="stat-value">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Vidas</span>
+        <span id="lives-val" class="stat-value">❄️❄️❄️</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Tempo</span>
+        <span id="timer-val" class="stat-value">--</span>
+      </div>
+    </div>
+
+    <!-- Tela Inicial / Start -->
+    <div id="start-screen" class="screen active">
+      <div class="instructions">
+        <h3>🏔️ Guia de Sobrevivência:</h3>
+        <ul>
+          <li>🧠 <strong>Fase 1:</strong> Observe a sequência de cristais numéricos iluminados no gelo.</li>
+          <li>🎯 <strong>Fase 2:</strong> Repita a sequência para acender os números corretos.</li>
+          <li>🦣 <strong>Fase 3 (Desafio do Mamute):</strong> Resolva o cálculo do Mamute antes que a tempestade congele tudo!</li>
+        </ul>
+      </div>
+      <button id="start-btn" class="btn primary-btn">Iniciar Expedição 🧊</button>
+    </div>
+
+    <!-- Tela do Jogo Principal -->
+    <div id="game-screen" class="screen">
+      <div id="status-message" class="status-msg">Observe os cristais...</div>
+
+      <!-- Tabuleiro de Números Congelados -->
+      <div class="grid-container">
+        <button class="num-btn" data-num="1">🧊 1</button>
+        <button class="num-btn" data-num="2">🧊 2</button>
+        <button class="num-btn" data-num="3">🧊 3</button>
+        <button class="num-btn" data-num="4">🧊 4</button>
+        <button class="num-btn" data-num="5">🧊 5</button>
+        <button class="num-btn" data-num="6">🧊 6</button>
+        <button class="num-btn" data-num="7">🧊 7</button>
+        <button class="num-btn" data-num="8">🧊 8</button>
+        <button class="num-btn" data-num="9">🧊 9</button>
+      </div>
+
+      <!-- Desafio Matemático do Mamute (Modal / Overlay) -->
+      <div id="math-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>🦣 Desafio do Mamute!</h2>
+          <p>Calcule rápido para não virar picolé:</p>
+          <div id="math-expression" class="expression">5 + 3 = ?</div>
+          <div class="math-options">
+            <button class="math-opt-btn"></button>
+            <button class="math-opt-btn"></button>
+            <button class="math-opt-btn"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tela de Game Over -->
+    <div id="gameover-screen" class="screen">
+      <h2>Congelado! 🥶</h2>
+      <p>Sua expedição parou na Era <span id="final-level">1</span></p>
+      <p class="final-score">Pontuação Glacial: <span id="final-score">0</span></p>
+      <button id="restart-btn" class="btn primary-btn">Tentar Novamente 🏔️</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
